@@ -1,0 +1,89 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#searchInput {
+    margin-left: 82%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 200px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #4caf50;
+    color: #fff;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+td {
+    font-size: 14px;
+    color: #333;
+}
+
+.btn {
+    padding: 6px 12px;
+    margin-right: 5px;
+    text-decoration: none;
+    font-size: 12px;
+    color: white;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+/* Tombol Ubah (edit) */
+.edit-btn {
+    background-color: #4CAF50; /* Hijau */
+}
+
+.edit-btn:hover {
+    background-color: #45a049;
+}
+
+/* Tombol Hapus (delete) */
+.delete-btn {
+    background-color: #f44336; /* Merah */
+}
+
+.delete-btn:hover {
+    background-color: #da190b;
+}
