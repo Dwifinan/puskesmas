@@ -1,23 +1,33 @@
+<?php 
+session_start();
+if(isset($_POST["proses"])){
+    $kode_akses = htmlspecialchars($_POST["kode_akses"]);
+    if($kode_akses == "rahasiaadmin"){
+        $_SESSION["auth"] = TRUE;
+        header("location: dashboard.php");
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Masukan Kode Akses</title>
+    <title>Login Admin</title>
     <link rel="stylesheet" href="css/kode.css">
 </head>
 <body>
     <main>
         <section>
-            <h2>Masukan Kode Akses</h2>
-            <form action="dashboard.php" method="post">
+            <h2>LOGIN ADMIN</h2>
+            <form action="" method="post">
                 <label for="kode_akses">Kode Akses:</label><br><br>
-                <input type="password" id="kode_akses" name="kode_akses" placeholder="Masukkan kode akses" required><br><br>
-                <input type="submit" value="Submit">
+                <input type="password" id="kode_akses" name="kode_akses" placeholder="Masukkan kode akses" required><br>
+                <input type="submit" name="proses" value="Masuk">
             </form>
         </section>
     </main>
     
-    <script src="js/web.js"></script>
 </body>
 </html>

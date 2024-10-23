@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DESIGN TEMPLATE</title>
+    <title>PUSKESMAS KUTAMUKTI</title>
     <link rel="stylesheet" href="css/tampilan.css">
 </head>
 <body>
@@ -23,7 +23,7 @@
 
         <section class="antrian">
             <div class="image-box">
-                <a href="antrian.php" class="text">Ambil Antrian</a>
+                <a href="daftarAntrian.php" class="text">Ambil Antrian</a>
             </div>
         </section>
         <br><br><br>

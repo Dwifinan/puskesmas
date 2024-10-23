@@ -1,10 +1,11 @@
 <?php 
-
-// session_start();
-// if(!isset($_SESSION['user'])){
-//     header('location: login.php');
-// }
-
+if(!isset($_GET["na"])){
+    header("location: index.php");
+}
+require_once "database/koneksi.php";
+$na = $_GET["na"];
+$result = mysqli_query($koneksi,"SELECT * FROM antrian WHERE nomor_antrian = '$na'");
+$data = mysqli_fetch_assoc($result);
 ?>
 
 
@@ -63,14 +64,13 @@
     <section class="content">
         <div class="ticket-container">
             <h2>Selamat, Antrian Anda Berhasil Diambil!</h2>
-            <p>Nomor Antrian: 005</p>
-            <p>Nama: Osas Subianto</p>
-            <p>Tanggal Antrian: 20 Oktober 2024</p>
-            <p>Jam Antrian: 09.00 WIB</p>
-            <p>Jenis Pelayanan: Dokter Umum</p>
-            <p>Keterangan: Harap datang 5 menit sebelum jam antrian</p>
-            <button style="width: 100%;" onclick="window.print()">Cetak Tiket</button>
-            <!-- <p style="color:red;text-align:center">HARAP SCREENSHOT ATAU SIMPAN TIKET INI</p> -->
+            <p>Nomor Antrian: <?=$data["nomor_antrian"]?></p>
+            <p>Nama: <?=$data["nama"]?></p>
+            <p>Jenis Kelamin: <?=$data["jenis_kelamin"]?></p>
+            <p>Waktu Pengambilan: <?=$data["created_at"]?></p>
+            <p>Jenis Pelayanan: <?=$data["jenis_pelayanan"]?></p>
+            <!-- <button style="width: 100%;" onclick="window.print()">Cetak Tiket</button> -->
+            <p style="color:red;text-align:center">HARAP SCREENSHOT ATAU SIMPAN TIKET INI</p>
         </div>
     </section>
 

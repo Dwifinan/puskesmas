@@ -1,9 +1,20 @@
+<?php 
+session_start();
+
+if(!isset($_SESSION["auth"])){
+    header("location: index.php");
+}
+
+require_once "database/koneksi.php";
+$query = mysqli_query($koneksi,"SELECT * FROM antrian");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kelola Antrian</title>
+    <title>Dashboard</title>
     <link rel="stylesheet" href="css/admin.css">
 </head>
 <body>
@@ -12,46 +23,48 @@
     <aside class="sidebar">
         <h2>Admin Panel</h2>
         <ul>
-            <li><a href="kelolaPengguna.php">Kelola Pengguna</a></li><br>
+            <li><a href="dashboard.php">Dashboard</a></li>
             <li><a href="kelolaAntrian.php">Kelola Antrian</a></li>
+            <li><a href="logout.php">Logout!</a></li>
         </ul>
     </aside>
 
     <!-- Main Content -->
     <div class="main-content">
-        <h2>Kelola Antrian</h2>
+        <h2>Daftar Antrian</h2>
         <table>
             <thead>
                 <tr>
                     <th>No Antrian</th>
-                    <th>Nama</th>
-                    <th>NIK / BPJS</th>
+                    <th>NIK/BPJS</th>
+                    <th>Nama Lengkap</th>
+                    <th>Jenis Kelamin</th>
                     <th>Status Antrian</th>
                     <th>Aksi</th>
                 </tr>
             </thead>
             <tbody>
-                <!-- Contoh data antrian -->
+                <!-- Contoh data pengguna -->
+                <?php foreach($query as $data) :?>
                 <tr>
-                    <td>1</td>
-                    <td>John Doe</td>
-                    <td>123456789</td>
-                    <td>Menunggu</td>
+                    <td><?=$data["nomor_antrian"]?></td>
+                    <td><?=$data["nikbpjs"]?></td>
+                    <td><?=$data["nama"]?></td>
+                    <td><?=$data["jenis_kelamin"]?></td>
                     <td>
-                        <a href="ubahStatusPasien.php?id=1" class="btn edit-btn">Ubah Status</a> |
-                        <a href="ubahPengguna.php?id=1" class="btn edit-btn">Ubah Data Pasien</a>
+                        <?php 
+                        if($data["status_antrian"] == 0){
+                            echo "Menunggu";
+                        } else {
+                            echo "Sudah Dilayani";
+                        }
+                        ?>
+                    </td>
+                    <td>
+                        <a href="detailAntrian.php?na=<?=$data["nomor_antrian"]?>">Detail</a>
                     </td>
                 </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Jane Smith</td>
-                    <td>987654321</td>
-                    <td>Menunggu</td>
-                    <td>
-                        <a href="ubahStatusAntrian.php?id=2" class="btn edit-btn">Ubah Status</a> |
-                        <a href="ubah_data_pasien.php?id=2" class="btn edit-btn">Ubah Data Pasien</a>
-                    </td>
-                </tr>
+                <?php endforeach ?>
                 <!-- Tambahkan lebih banyak data sesuai kebutuhan -->
             </tbody>
         </table>
