@@ -110,7 +110,7 @@ $data = mysqli_fetch_assoc($result);
                 <input type="text" id="created_at" name="created_at" value="<?=$data["created_at"]?>" disabled>
             </div>
             <?php 
-            if($data["status_antrian"]===0){
+            if($data["status_antrian"]==0){
             ?>
             <button type="submit" name="proses">Konfirmasi Antrian</button>
             <?php }else { ?>

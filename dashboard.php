@@ -22,7 +22,7 @@ if(!isset($_SESSION["auth"])){
         <ul>
             <li><a href="dashboard.php">Dashboard</a></li>
             <li><a href="kelolaAntrian.php">Kelola Antrian</a></li>
-            <li><a href="logout.php">Logout!</a></li>
+            <li><a href="logout.php">Keluar</a></li>
         </ul>
     </aside>
 
