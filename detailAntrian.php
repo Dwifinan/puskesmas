@@ -10,6 +10,12 @@ $na = $_GET["na"];
 $result = mysqli_query($koneksi,"SELECT * FROM antrian WHERE nomor_antrian = '$na'");
 $data = mysqli_fetch_assoc($result);
 
+if(isset($_POST["proses"])){
+    $nomor_antrian = $data["nomor_antrian"];
+    mysqli_query($koneksi,"UPDATE antrian SET status_antrian=1 WHERE nomor_antrian='$nomor_antrian'");
+    header("location: kelolaAntrian.php");
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -18,7 +24,9 @@ $data = mysqli_fetch_assoc($result);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <script src="library/sweetalert2/sweetalert2.all.min.js"></script>
+    <link rel="stylesheet" href="library/sweetalert2/sweetalert2.min.css">
     <style>
         /* Form Styles */
         form {
@@ -67,6 +75,8 @@ $data = mysqli_fetch_assoc($result);
         <ul>
             <li><a href="dashboard.php">Dashboard</a></li>
             <li><a href="kelolaAntrian.php">Kelola Antrian</a></li>
+            <li><a href="kelolaDokter.php">Kelola Dokter</a></li>
+            <li><a href="jadwalDokter.php">Jadwal Dokter</a></li>
             <li><a href="logout.php">Logout!</a></li>
         </ul>
     </aside>
@@ -109,23 +119,43 @@ $data = mysqli_fetch_assoc($result);
                 <label for="created_at">Waktu Antrian:</label>
                 <input type="text" id="created_at" name="created_at" value="<?=$data["created_at"]?>" disabled>
             </div>
-            <?php 
-            if($data["status_antrian"]===0){
-            ?>
-            <button type="submit" name="proses">Konfirmasi Antrian</button>
-            <?php }else { ?>
-            <button type="button">Sudah Dikonfirmasi</button>
-            <?php } ?>
+             <?php 
+if(isset($data["status_antrian"])) {
+    if($data["status_antrian"] == 0){ 
+        ?>
+        <button type="submit" onclick="return confirm('Konfirmasi Antrian?')" name="proses">Konfirmasi Antrian</button>
+        <?php 
+    } else { 
+        ?>
+        <button type="button">Sudah Dikonfirmasi</button>
+        <?php 
+    }
+}
+?>
         </form>
     </div>
 
+<!-- <script src="library/jquery.js"></script>
+<script>
+    $('.submit-confirm').click(function (e) { 
+    e.preventDefault();
+    let form = $(this).closest('form');
+    Swal.fire({
+    title: 'Konfirmasi Antrian?',
+    text: "Pastikan Data Sudah Benar!",
+    icon: 'question',
+    showCancelButton: true,
+    confirmButtonColor: '#45a049',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Konfirmasi'
+    }).then((result) => {
+    if (result.isConfirmed) {
+        form.submit();
+    }
+  })
+    });
+  </script>
+</script> -->
+
 </body>
 </html>
-
-<?php 
-if(isset($_POST["proses"])){
-    $nomor_antrian = $data["nomor_antrian"];
-    mysqli_query($koneksi,"UPDATE antrian SET status_antrian=1 WHERE nomor_antrian='$nomor_antrian'");
-    header("location: kelolaAntrian.php");
-}
-?>

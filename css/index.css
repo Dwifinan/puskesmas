@@ -1,0 +1,207 @@
+/* Reset default margin dan padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-image: url("../img/background.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  height: 100vh;
+  width: 100%;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: inherit;
+  background-size: cover;
+  background-position: center;
+  filter: blur(2px);
+  z-index: -1;
+}
+
+/* Header */
+header {
+  background-color: #4caf50; /* Hijau */
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.logo-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.konten {
+  margin-top: 20px;
+  height: 80%;
+  max-width: 500px;
+  margin-left: 33%;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.553);
+  border-radius: 10px;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 24px;
+}
+
+/* Main Section Styles */
+main {
+  padding: 20px;
+  text-align: center;
+}
+
+/* Section Title */
+main section h2 {
+  font-size: 22px;
+  margin-bottom: 20px;
+  color: #000000; /* Hijau lebih gelap */
+}
+
+/* Kotak pilihan untuk setiap section */
+.antrian,
+.login {
+  height: 20%;
+  display: inline-block;
+  width: 300px;
+  padding: 40px;
+  background-color: white;
+  border: 2px solid #4caf50; /* Warna hijau untuk border */
+  border-radius: 10px;
+  margin: 15px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Efek bayangan */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efek hover */
+}
+
+.antrian:hover,
+.login:hover {
+  transform: translateY(-5px); /* Efek naik saat hover */
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); /* Bayangan lebih besar */
+}
+
+h3 {
+  font-size: 20px;
+  color: #388e3c;
+}
+
+/* Responsif untuk layar ponsel */
+@media (max-width: 768px) {
+  body {
+    background-attachment: scroll; /* Menonaktifkan background fixed pada ponsel */
+  }
+
+  .konten {
+    margin-left: 10%; /* Menurunkan margin untuk membuat konten lebih lebar */
+    max-width: 80%; /* Membuat konten lebih lebar di layar kecil */
+  }
+
+  .logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .antrian,
+  .login {
+    width: 90%; /* Lebar kotak pilihan lebih besar di ponsel */
+    padding: 30px;
+    margin: 10px auto; /* Membuat margin lebih kecil dan center */
+  }
+
+  h1 {
+    font-size: 20px; /* Menurunkan ukuran font untuk ponsel */
+  }
+
+  h2 {
+    font-size: 18px; /* Menurunkan ukuran font untuk ponsel */
+  }
+
+  h3 {
+    font-size: 18px; /* Menurunkan ukuran font untuk ponsel */
+  }
+}
+
+/* Responsif untuk layar ponsel lebih kecil dari 480px */
+@media (max-width: 480px) {
+  .logo {
+    width: 30px;
+    height: 30px;
+  }
+
+  .konten {
+    margin-left: 5%; /* Menurunkan margin untuk tampilan lebih kecil */
+    max-width: 90%; /* Membuat konten lebih lebar */
+    padding: 15px; /* Menurunkan padding */
+  }
+
+  .antrian,
+  .login {
+    width: 100%; /* Membuat kotak pilihan lebih lebar di ponsel */
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 18px; /* Menurunkan ukuran font lebih lanjut */
+  }
+
+  h2 {
+    font-size: 16px; /* Menurunkan ukuran font lebih lanjut */
+  }
+
+  h3 {
+    font-size: 16px; /* Menurunkan ukuran font lebih lanjut */
+  }
+}
+
+/* Responsif untuk layar ponsel lebih kecil dari 400px */
+@media (max-width: 400px) {
+  .logo {
+    width: 25px;
+    height: 25px;
+  }
+
+  .konten {
+    margin-left: 3%; /* Menurunkan margin untuk lebih banyak ruang */
+    max-width: 95%; /* Membuat konten lebih lebar */
+    padding: 20px; /* Menurunkan padding */
+  }
+
+  .antrian,
+  .login {
+    width: 100%; /* Membuat kotak pilihan lebih lebar di ponsel */
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 16px; /* Menurunkan ukuran font lebih lanjut */
+  }
+
+  h2 {
+    font-size: 14px; /* Menurunkan ukuran font lebih lanjut */
+  }
+
+  h3 {
+    font-size: 14px; /* Menurunkan ukuran font lebih lanjut */
+  }
+}

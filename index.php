@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PUSKESMAS KUTAMUKTI</title>
-    <link rel="stylesheet" href="css/tampilan.css">
+    <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
     <!-- Header -->
@@ -21,17 +21,23 @@
             <h2 class="halo">Selamat Datang Di Website Puskesmas Kutamukti</h2>
         </section>
 
-        <section class="antrian">
+        <a href="lihatJadwal.php"><section class="antrian">
             <div class="image-box">
-                <a href="daftarAntrian.php" class="text">Ambil Antrian</a>
+                <h3 class="ambil">Jadwal Dokter</h3>
             </div>
-        </section>
-        <br><br><br>
-        <section class="login">
+        </section></a>
+        <br><br>
+        <a href="daftarAntrian.php"><section class="antrian">
             <div class="image-box">
-                <a href="kodeAkses.php" class="text">Login</a>
+                <h3 class="ambil">Ambil Antrian</h3>
             </div>
-        </section>
+        </section></a>
+        <br><br>
+        <a href="kodeAkses.php"><section class="login">
+            <div class="image-box">
+                <h3 class="admin">Login Sebagai Admin</h3>
+            </div>
+        </section></a>
     </main>
 
     <script src="js/web.js"></script>

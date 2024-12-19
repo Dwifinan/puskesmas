@@ -1,0 +1,53 @@
+[13-Dec-2024 19:54:28 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM antrian' at line 1 in /home/idarmabi/public_html/anopus/dashboard.php:12
+Stack trace:
+#0 /home/idarmabi/public_html/anopus/dashboard.php(12): mysqli_query()
+#1 {main}
+  thrown in /home/idarmabi/public_html/anopus/dashboard.php on line 12
+[13-Dec-2024 19:54:32 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM antrian' at line 1 in /home/idarmabi/public_html/anopus/dashboard.php:12
+Stack trace:
+#0 /home/idarmabi/public_html/anopus/dashboard.php(12): mysqli_query()
+#1 {main}
+  thrown in /home/idarmabi/public_html/anopus/dashboard.php on line 12
+[13-Dec-2024 19:55:15 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'COUNT' in 'SELECT' in /home/idarmabi/public_html/anopus/dashboard.php:12
+Stack trace:
+#0 /home/idarmabi/public_html/anopus/dashboard.php(12): mysqli_query()
+#1 {main}
+  thrown in /home/idarmabi/public_html/anopus/dashboard.php on line 12
+[13-Dec-2024 19:55:19 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'COUNT' in 'SELECT' in /home/idarmabi/public_html/anopus/dashboard.php:12
+Stack trace:
+#0 /home/idarmabi/public_html/anopus/dashboard.php(12): mysqli_query()
+#1 {main}
+  thrown in /home/idarmabi/public_html/anopus/dashboard.php on line 12
+[13-Dec-2024 19:55:33 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') FROM antrian' at line 1 in /home/idarmabi/public_html/anopus/dashboard.php:12
+Stack trace:
+#0 /home/idarmabi/public_html/anopus/dashboard.php(12): mysqli_query()
+#1 {main}
+  thrown in /home/idarmabi/public_html/anopus/dashboard.php on line 12
+[13-Dec-2024 19:55:58 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'no_antrian' in 'SELECT' in /home/idarmabi/public_html/anopus/dashboard.php:12
+Stack trace:
+#0 /home/idarmabi/public_html/anopus/dashboard.php(12): mysqli_query()
+#1 {main}
+  thrown in /home/idarmabi/public_html/anopus/dashboard.php on line 12
+[13-Dec-2024 19:56:57 UTC] PHP Fatal error:  Uncaught Error: Object of class mysqli_result could not be converted to string in /home/idarmabi/public_html/anopus/dashboard.php:53
+Stack trace:
+#0 {main}
+  thrown in /home/idarmabi/public_html/anopus/dashboard.php on line 53
+[13-Dec-2024 19:57:39 UTC] PHP Fatal error:  Uncaught Error: Object of class mysqli_result could not be converted to string in /home/idarmabi/public_html/anopus/dashboard.php:53
+Stack trace:
+#0 {main}
+  thrown in /home/idarmabi/public_html/anopus/dashboard.php on line 53
+[13-Dec-2024 19:59:09 UTC] PHP Fatal error:  Uncaught Error: Object of class mysqli_result could not be converted to string in /home/idarmabi/public_html/anopus/dashboard.php:53
+Stack trace:
+#0 {main}
+  thrown in /home/idarmabi/public_html/anopus/dashboard.php on line 53
+[13-Dec-2024 19:59:47 UTC] PHP Fatal error:  Uncaught Error: Object of class mysqli_result could not be converted to string in /home/idarmabi/public_html/anopus/dashboard.php:54
+Stack trace:
+#0 {main}
+  thrown in /home/idarmabi/public_html/anopus/dashboard.php on line 54
+[13-Dec-2024 20:00:35 UTC] PHP Warning:  Array to string conversion in /home/idarmabi/public_html/anopus/dashboard.php on line 53
+[13-Dec-2024 20:02:20 UTC] PHP Fatal error:  Uncaught Error: Cannot use object of type mysqli_result as array in /home/idarmabi/public_html/anopus/dashboard.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/idarmabi/public_html/anopus/dashboard.php on line 13
+[13-Dec-2024 20:07:26 UTC] PHP Warning:  Undefined variable $hasiljs in /home/idarmabi/public_html/anopus/dashboard.php on line 17
+[13-Dec-2024 20:07:26 UTC] PHP Warning:  Trying to access array offset on null in /home/idarmabi/public_html/anopus/dashboard.php on line 17

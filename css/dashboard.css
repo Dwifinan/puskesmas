@@ -1,0 +1,178 @@
+/* Gaya dasar */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    background-color: #f4f4f4;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 230px;
+    background-color: #4caf50; /* Warna hijau */
+    padding: 20px;
+    height: 100vh;
+    color: white;
+    position: fixed;
+    left: 0;
+    top: 0;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1); /* Efek bayangan sidebar */
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 20px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.sidebar ul li:hover {
+    transform: translateX(5px); /* Efek gerakan saat hover */
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.sidebar ul li a:hover {
+    background-color: #45a049; /* Warna hijau lebih gelap saat hover */
+    text-decoration: none;
+}
+
+/* Main Content */
+.main-content {
+    margin-left: 270px; /* Menyisakan ruang untuk sidebar */
+    padding: 30px;
+    width: calc(100% - 270px); /* Lebar konten utama setelah sidebar */
+    background-color: #f4f4f4;
+}
+
+.main-content h2 {
+    margin-bottom: 20px;
+    color: #333333; /* Warna teks */
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+
+
+/* Cards Section */
+.cards {
+    margin-left: 350px;
+    margin-top: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Memberi jarak antar cards */
+    margin-bottom: 30px;
+}
+
+.card {
+    flex: 1;
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Efek bayangan */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px); /* Animasi naik */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Bayangan lebih besar saat hover */
+}
+
+.card h3 {
+    font-size: 1.2rem;
+    color: #4caf50; /* Hijau utama */
+    margin-bottom: 15px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.card p {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333333; /* Warna teks */
+}
+
+/* Table Styles */
+table {
+    margin-left: 350px;
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Efek bayangan */
+    margin-top: 20px;
+}
+
+
+table, th, td {
+    border: 1px solid #ddd;
+    padding: 15px;
+    text-align: center;
+}
+
+th {
+    background-color: #4caf50; /* Warna hijau untuk header */
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase; /* Huruf besar semua */
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #e9f5e9; /* Warna hijau lembut saat hover */
+    cursor: pointer; /* Tanda interaksi */
+}
+
+td {
+    font-size: 1rem;
+    color: #555555;
+    font-weight: 500;
+}
+
+
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .cards {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+        padding: 20px;
+    }
+
+    .sidebar {
+        position: static;
+        width: 100%;
+        height: auto;
+    }
+}

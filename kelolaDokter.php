@@ -6,7 +6,7 @@ if(!isset($_SESSION["auth"])){
 }
 
 require_once "database/koneksi.php";
-$query = mysqli_query($koneksi,"SELECT * FROM antrian");
+$query = mysqli_query($koneksi,"SELECT * FROM dokter");
 ?>
 
 <!DOCTYPE html>
@@ -33,41 +33,28 @@ $query = mysqli_query($koneksi,"SELECT * FROM antrian");
 
     <!-- Main Content -->
     <div class="main-content">
-        <h2>Daftar Antrian</h2>
-        <table>
+        <h2>Daftar Dokter</h2>
+        <button><a href="tambahDokter.php">Tambah Dokter</a></button><br><br>
+        <table class="dokter">
             <thead>
                 <tr>
-                    <th>No Antrian</th>
-                    <th>NIK/BPJS</th>
-                    <th>Nama Lengkap</th>
-                    <th>Jenis Kelamin</th>
-                    <th>Status Antrian</th>
+                    <th>No Dokter</th>
+                    <th>Nama Dokter</th>
+                    <th>Jenis Dokter</th>
                     <th>Aksi</th>
                 </tr>
             </thead>
             <tbody>
-                <!-- Contoh data pengguna -->
-                <?php foreach($query as $data) :?>
+                <?php foreach ($query as $data) :?>
                 <tr>
-                    <td><?=$data["nomor_antrian"]?></td>
-                    <td><?=$data["nikbpjs"]?></td>
-                    <td><?=$data["nama"]?></td>
-                    <td><?=$data["jenis_kelamin"]?></td>
+                    <td><?=$data["no_dokter"]?></td>
+                    <td><?=$data["nama_dokter"]?></td>
+                    <td><?=$data["jenis_dokter"]?></td>
                     <td>
-                        <?php 
-                        if($data["status_antrian"] == 0){
-                            echo "Menunggu";
-                        } else {
-                            echo "Sudah Dilayani";
-                        }
-                        ?>
-                    </td>
-                    <td>
-                        <a href="detailAntrian.php?na=<?=$data["nomor_antrian"]?>">Detail</a>
+                        <a href="hapusDokter.php?nd=<?=$data["no_dokter"]?>" onclick="return confirm('Hapus Dokter?')">Hapus</a>
                     </td>
                 </tr>
                 <?php endforeach ?>
-                <!-- Tambahkan lebih banyak data sesuai kebutuhan -->
             </tbody>
         </table>
     </div>
